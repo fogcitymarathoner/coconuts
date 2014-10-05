@@ -1,0 +1,48 @@
+{
+    "average": 3.5714285714285716, 
+    "streams": [
+        {
+            "end_point": 5, 
+            "start_point": 0, 
+            "consumption": 10, 
+            "index": 0
+        }, 
+        {
+            "end_point": 3, 
+            "start_point": 1, 
+            "consumption": 5, 
+            "index": 1
+        }, 
+        {
+            "end_point": 7, 
+            "start_point": 3, 
+            "consumption": 12, 
+            "index": 2
+        }, 
+        {
+            "end_point": 11, 
+            "start_point": 6, 
+            "consumption": 20, 
+            "index": 3
+        }, 
+        {
+            "end_point": 17, 
+            "start_point": 14, 
+            "consumption": 8, 
+            "index": 4
+        }, 
+        {
+            "end_point": 24, 
+            "start_point": 19, 
+            "consumption": 14, 
+            "index": 5
+        }, 
+        {
+            "end_point": 22, 
+            "start_point": 21, 
+            "consumption": 2, 
+            "index": 6
+        }
+    ], 
+    "consumption": 50
+}
