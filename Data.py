@@ -153,8 +153,13 @@ class StreamJsonCalculator:
                 consumption = end_point * self.consumption
 
         current_point = self.streams[current_stream].end_point
+        k = 0
         for i in paths[1:]:
             consumption += (self.streams[i].start_point - current_point) * self.consumption
             consumption += self.streams[i].consumption
             current_point = self.streams[i].end_point
+            k = i
+        # add the remainder if travel doesn't end in a stream
+        if end_point > self.streams[k].end_point:
+            consumption += (end_point - self.streams[k].end_point) * self.consumption
         return consumption
