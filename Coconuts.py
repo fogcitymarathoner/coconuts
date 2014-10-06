@@ -22,7 +22,7 @@ class Root(object):
                 'calculator': calculator,
             }
             ## render template with context data
-            html = engine.render('page.pyhtml', context)
+            html = engine.render('empty_page.pyhtml', context)
             return html
         else:
 
@@ -31,7 +31,7 @@ class Root(object):
             context = {
                 'title': 'Coconuts',
                 'calculator': calculator,
-                'dist': dist
+                'dist': int(dist)
             }
             ## render template with context data
             html = engine.render('page.pyhtml', context)

@@ -5,14 +5,18 @@
     <title>${title}</title>
     <link rel="stylesheet" type="text/css" href="static/css/styles.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+    <script src="static/js/coconuts.js"></script>
   </head>
   <body>
     <div class='container'>
         <div class='form'>
+            <form  id='find-paths'>
+                <input id='dist' name='dist'></input>
+                <input type="submit" value="Find Paths">
+            </form>
         </div>
-        <div id='results>
+        <div id='results'>
         </div>
     </div>
   </body>
 </html>
-<script src="static/js/coconuts.js"></script>
