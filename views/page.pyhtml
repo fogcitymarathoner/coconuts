@@ -1,3 +1,11 @@
 
-  <?py con = calculator.fuel_consumption(calculator.path(dist), dist) ?>
+  <?py paths = calculator.path(dist) ?>
+  <?py con = calculator.fuel_consumption(paths, dist) ?>
   Consumption: ${con}
+
+  <?py for p in paths:?>
+  <?py  start =  calculator.streams[p].start_point ?>
+  <?py  end =  calculator.streams[p].end_point ?>
+  ${start},
+  ${end}
+  <?py #endfor ?>
