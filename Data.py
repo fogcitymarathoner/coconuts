@@ -127,8 +127,12 @@ class StreamJsonCalculator:
             # no good next paths
             if len(sorted_list) > 0:
                 best_next = sorted_list[0]
-                streams.append(best_next)
-                current_point = self.streams[best_next].end_point
+                # done add if it's outside of end point
+                if self.streams[best_next].start_point < end_point:
+                    streams.append(best_next)
+                    current_point = self.streams[best_next].end_point
+                else:
+                    break
             else:
                 break
         return streams

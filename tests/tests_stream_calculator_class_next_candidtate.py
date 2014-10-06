@@ -75,7 +75,7 @@ class CocoStreamCalculatorNextTest(unittest.TestCase):
         self.assertEquals([0, 6, 8, 9, 10, 14, 17, 22, 25, 26, 28, 29, 31, 32, 37, 39, 41, 43, 44, 45, 50, 51, 53, 54, 55, 61, 66, 69, 72, 73, 79, 80, 85, 86, 88, 89, 91, 97, 99, 101]
 ,self.calculator.path(20000))
         self.assertEquals([], self.calculator.path(88))
-        self.assertEquals([0,6,8], self.calculator.path(1000))
+        self.assertEquals([0,6], self.calculator.path(1000))
 
     def test_small_set_consumption(self):
         """
