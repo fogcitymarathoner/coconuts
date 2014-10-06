@@ -14,6 +14,7 @@ class CocoModuleImportTest(unittest.TestCase):
         module_list = [
             'Data',
             'DataArray',
+            'Coconuts',
             'lib',
             'settings',
             'utils.build_cache'
