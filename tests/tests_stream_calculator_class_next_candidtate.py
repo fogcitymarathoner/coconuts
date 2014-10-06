@@ -73,6 +73,7 @@ class CocoStreamCalculatorNextTest(unittest.TestCase):
         """
 
 
+        self.assertEquals([0, 6, 8, 9, 10, 14], self.calculator.path(20000))
         self.assertEquals([], self.calculator.path(88))
         self.assertEquals([0,6,8], self.calculator.path(1000))
 

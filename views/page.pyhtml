@@ -9,3 +9,7 @@
   ${start},
   ${end}
   <?py #endfor ?>
+
+  <?py if len(paths) == 0: ?>
+  No Streams HIT
+  <?py #endif ?>

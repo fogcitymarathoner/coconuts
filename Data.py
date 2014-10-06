@@ -77,6 +77,8 @@ class StreamJsonCalculator:
         sort accending on cost
         """
         cleaned_streams = []
+        print 'list'
+        print unsorted_uncleaned_streams
         for p in unsorted_uncleaned_streams:
 
             if not (self_powered_point >= self.streams[p].start_point and self_powered_point <= self.streams[p].end_point):
@@ -119,10 +121,16 @@ class StreamJsonCalculator:
         else:
             current_point = self.streams[current_stream].end_point
         while current_point <= end_point:
-            best_next = self.sort_cleaned_streams_on_cost(current_point,
-                                              self.clean_next_streams(current_point, self.get_next_streams_in_range(current_point)))[0]
-            streams.append(best_next)
-            current_point = self.streams[best_next].end_point
+            print 'x'
+            next_list = self.get_next_streams_in_range(current_point)
+            sorted_list = self.sort_cleaned_streams_on_cost(current_point,
+                                              self.clean_next_streams(current_point, next_list))
+            if len(sorted_list) > 0:
+                best_next = sorted_list[0]
+                streams.append(best_next)
+                current_point = self.streams[best_next].end_point
+            else:
+                break
         return streams
     def fuel_consumption(self, paths, end_point):
         """
