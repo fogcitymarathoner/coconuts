@@ -53,7 +53,7 @@ class StreamJsonCalculator:
         return list of next streams within 2 average distances away
         """
         unsorted_uncleaned_streams = []
-        outside_limit = self_powered_point + 2 * self.average
+        outside_limit = self_powered_point + 3 * self.average
         start_point = self_powered_point
         # skip if start point is out of stream range
         if start_point > self.streams[len(self.streams)-1].end_point:
@@ -77,8 +77,7 @@ class StreamJsonCalculator:
         sort accending on cost
         """
         cleaned_streams = []
-        print 'list'
-        print unsorted_uncleaned_streams
+
         for p in unsorted_uncleaned_streams:
 
             if not (self_powered_point >= self.streams[p].start_point and self_powered_point <= self.streams[p].end_point):
@@ -121,10 +120,11 @@ class StreamJsonCalculator:
         else:
             current_point = self.streams[current_stream].end_point
         while current_point <= end_point:
-            print 'x'
             next_list = self.get_next_streams_in_range(current_point)
+
             sorted_list = self.sort_cleaned_streams_on_cost(current_point,
                                               self.clean_next_streams(current_point, next_list))
+            # no good next paths
             if len(sorted_list) > 0:
                 best_next = sorted_list[0]
                 streams.append(best_next)

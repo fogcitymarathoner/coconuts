@@ -57,12 +57,12 @@ class CocoStreamCalculatorNextTest(unittest.TestCase):
             raw_data = json.load(json_file)
         calculator = StreamJsonCalculator(raw_data)
 
-        self.assertEquals([0,1,2,3], calculator.get_next_streams_in_range(0))
-        self.assertEquals([0,1,2,3], calculator.get_next_streams_in_range(3))
-        self.assertEquals([0,1,2,3], calculator.get_next_streams_in_range(7))
-        self.assertEquals([0,1,2,3], calculator.get_next_streams_in_range(9))
-        self.assertEquals([0,1,2,3], calculator.get_next_streams_in_range(22))
-        self.assertEquals([0,1,2,3], calculator.get_next_streams_in_range(30))
+        self.assertEquals([0, 1, 2, 3, 4, 5, 6, 7], calculator.get_next_streams_in_range(0))
+        self.assertEquals([0, 1, 2, 3, 4, 5, 6, 7], calculator.get_next_streams_in_range(3))
+        self.assertEquals([0, 1, 2, 3, 4, 5, 6, 7], calculator.get_next_streams_in_range(7))
+        self.assertEquals([0, 1, 2, 3, 4, 5, 6, 7], calculator.get_next_streams_in_range(9))
+        self.assertEquals([0, 1, 2, 3, 4, 5, 6, 7], calculator.get_next_streams_in_range(22))
+        self.assertEquals([0, 1, 2, 3, 4, 5, 6, 7], calculator.get_next_streams_in_range(30))
         self.assertEquals([4,5,6,7,8], calculator.get_next_streams_in_range(500))
         self.assertEquals(None, calculator.get_next_streams_in_range(1000000))
 
@@ -72,8 +72,8 @@ class CocoStreamCalculatorNextTest(unittest.TestCase):
         test the paths routine
         """
 
-
-        self.assertEquals([0, 6, 8, 9, 10, 14], self.calculator.path(20000))
+        self.assertEquals([0, 6, 8, 9, 10, 14, 17, 22, 25, 26, 28, 29, 31, 32, 37, 39, 41, 43, 44, 45, 50, 51, 53, 54, 55, 61, 66, 69, 72, 73, 79, 80, 85, 86, 88, 89, 91, 97, 99, 101]
+,self.calculator.path(20000))
         self.assertEquals([], self.calculator.path(88))
         self.assertEquals([0,6,8], self.calculator.path(1000))
 

@@ -1,15 +1,20 @@
 
   <?py paths = calculator.path(dist) ?>
   <?py con = calculator.fuel_consumption(paths, dist) ?>
+  <div>
   Consumption: ${con}
-
-  <?py for p in paths:?>
-  <?py  start =  calculator.streams[p].start_point ?>
-  <?py  end =  calculator.streams[p].end_point ?>
-  ${start},
-  ${end}
-  <?py #endfor ?>
+  </div>
 
   <?py if len(paths) == 0: ?>
   No Streams HIT
+  <?py else: ?>
+      <div>Paths</div>
+      <div>
+      <?py for p in paths:?>
+      <?py  start =  calculator.streams[p].start_point ?>
+      <?py  end =  calculator.streams[p].end_point ?>
+      (${start},
+      ${end})
+      <?py #endfor ?>
+      </div>
   <?py #endif ?>

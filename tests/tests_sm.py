@@ -45,7 +45,7 @@ class CocoStreamCalculatorSmallTest(unittest.TestCase):
         self.assertEquals([0,1,2,3], self.calculator.get_next_streams_in_range(0))
         self.assertEquals([2,3], self.calculator.get_next_streams_in_range(3))
         self.assertEquals([4], self.calculator.get_next_streams_in_range(7))
-        self.assertEquals([4], self.calculator.get_next_streams_in_range(9))
+        self.assertEquals([4, 5], self.calculator.get_next_streams_in_range(9))
         self.assertEquals(None, self.calculator.get_next_streams_in_range(22))
         self.assertEquals(None, self.calculator.get_next_streams_in_range(30))
 
