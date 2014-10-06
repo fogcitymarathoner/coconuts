@@ -42,9 +42,9 @@ class CocoStreamCalculatorSmallTest(unittest.TestCase):
         """
         test the routine that collects next streams within range
         """
-        self.assertEquals([0,1,2,3], self.calculator.get_next_streams_in_range(0))
-        self.assertEquals([2,3], self.calculator.get_next_streams_in_range(3))
-        self.assertEquals([4], self.calculator.get_next_streams_in_range(7))
+        self.assertEquals([0,1,2,3,4], self.calculator.get_next_streams_in_range(0))
+        self.assertEquals([2,3, 4, 5], self.calculator.get_next_streams_in_range(3))
+        self.assertEquals([4,5], self.calculator.get_next_streams_in_range(7))
         self.assertEquals([4, 5], self.calculator.get_next_streams_in_range(9))
         self.assertEquals(None, self.calculator.get_next_streams_in_range(22))
         self.assertEquals(None, self.calculator.get_next_streams_in_range(30))
@@ -55,14 +55,14 @@ class CocoStreamCalculatorSmallTest(unittest.TestCase):
         """
 
 
-        self.assertEquals([1,2,3], self.calculator.clean_next_streams(0, self.calculator.get_next_streams_in_range(0)))
+        self.assertEquals([1,2,3,4], self.calculator.clean_next_streams(0, self.calculator.get_next_streams_in_range(0)))
     def test_small_set_sort_on_cost_clean_next_streams_in_range(self):
         """
         test the routine that removes bad next streams
         """
 
 
-        self.assertEquals([1,2,3], self.calculator.sort_cleaned_streams_on_cost(0, self.calculator.clean_next_streams(0, self.calculator.get_next_streams_in_range(0))))
+        self.assertEquals([1,2,3,4], self.calculator.sort_cleaned_streams_on_cost(0, self.calculator.clean_next_streams(0, self.calculator.get_next_streams_in_range(0))))
     def test_small_set_path(self):
         """
         test the paths routine
