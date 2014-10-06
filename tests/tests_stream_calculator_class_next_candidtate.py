@@ -73,6 +73,7 @@ class CocoStreamCalculatorNextTest(unittest.TestCase):
         """
 
 
+        self.assertEquals([], self.calculator.path(88))
         self.assertEquals([0,6,8], self.calculator.path(1000))
 
     def test_small_set_consumption(self):

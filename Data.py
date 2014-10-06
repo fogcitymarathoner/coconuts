@@ -113,8 +113,11 @@ class StreamJsonCalculator:
         streams.append(0)
 
         current_stream = 0
-
-        current_point = self.streams[current_stream].end_point
+        # see if end_point reaches first stream, return empty path
+        if end_point < self.streams[current_stream].end_point:
+            return []
+        else:
+            current_point = self.streams[current_stream].end_point
         while current_point <= end_point:
             best_next = self.sort_cleaned_streams_on_cost(current_point,
                                               self.clean_next_streams(current_point, self.get_next_streams_in_range(current_point)))[0]
