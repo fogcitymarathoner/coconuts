@@ -1,0 +1,4 @@
+
+
+  <?py con = calculator.fuel_consumption(calculator.path(22), 22) ?>
+  ${con}

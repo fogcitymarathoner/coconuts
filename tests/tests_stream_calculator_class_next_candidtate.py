@@ -74,3 +74,11 @@ class CocoStreamCalculatorNextTest(unittest.TestCase):
 
 
         self.assertEquals([0,6,8], self.calculator.path(1000))
+
+    def test_small_set_consumption(self):
+        """
+        test the consumption calculation routine 22 miles consumes  352
+        """
+
+
+        self.assertEquals(220, self.calculator.fuel_consumption(self.calculator.path(22), 22))

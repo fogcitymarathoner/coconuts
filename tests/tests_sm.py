@@ -76,4 +76,4 @@ class CocoStreamCalculatorSmallTest(unittest.TestCase):
         """
 
 
-        self.assertEquals(352, self.calculator.fuel_consumption(self.calculator.path(22)))
+        self.assertEquals(352, self.calculator.fuel_consumption(self.calculator.path(22), 22))

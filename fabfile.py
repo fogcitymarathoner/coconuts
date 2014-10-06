@@ -38,7 +38,7 @@ def sync():
     copy local changes in ~/personal/chef to sfgeek.net:rails_apps/rrg_chef using rsync
     :return:
     """
-    cmd =  'rsync -i ~/aws-centos-db-2.pem -ah --delete  --exclude="*/tmp/*"   --exclude=".git/*"  %s marc@coconuts.sfblur.com:python_apps/coconuts'%(SRC)
+    cmd =  'rsync  -ah --delete  --exclude="*/tmp/*"   --exclude=".git/*"  %s marc@www.coconuts.sfblur.com:python_apps/coconuts'%(SRC)
     local(cmd)
 
 

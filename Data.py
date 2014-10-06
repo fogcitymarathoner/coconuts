@@ -121,7 +121,7 @@ class StreamJsonCalculator:
             streams.append(best_next)
             current_point = self.streams[best_next].end_point
         return streams
-    def fuel_consumption(self, paths):
+    def fuel_consumption(self, paths, end_point):
         """
         return consumption on paths
         """
@@ -130,7 +130,12 @@ class StreamJsonCalculator:
         if self.start_on_stream():
             consumption = self.streams[current_stream].consumption
         else:
-            consumption = (self.streams[current_stream].start_point * self.consumption) + self.streams[current_stream].consumption
+
+            if end_point > self.streams[current_stream].start_point:
+                consumption = (self.streams[current_stream].start_point * self.consumption) + self.streams[current_stream].consumption
+
+            if end_point < self.streams[current_stream].start_point:
+                consumption = end_point * self.consumption
 
         current_point = self.streams[current_stream].end_point
         for i in paths[1:]:
