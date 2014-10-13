@@ -50,7 +50,7 @@ class StreamJsonCalculator:
 
     def get_next_streams_in_range(self, self_powered_point):
         """
-        return list of next streams within 2 average distances away
+        return list of next streams within 5 average distances away
         """
         unsorted_uncleaned_streams = []
         outside_limit = self_powered_point + 5 * self.average
