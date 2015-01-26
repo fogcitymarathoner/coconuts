@@ -12,12 +12,13 @@ class CocoModuleImportTest(unittest.TestCase):
         test_imports - makes sure modules will load
         """
         module_list = [
-            'Data',
-            'DataArray',
-            'Coconuts',
+            'data',
+            'data_array',
+            'coconuts',
             'lib',
             'settings',
             'utils.build_cache'
         ]
         for mod in module_list:
+            print mod
             self.assertTrue(module_exists(mod))

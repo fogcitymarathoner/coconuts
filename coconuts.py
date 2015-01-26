@@ -3,7 +3,7 @@ import cherrypy
 import tenjin
 import json
 from tenjin.helpers import *
-from Data import StreamJsonCalculator
+from data import StreamJsonCalculator
 
 from settings import FLIGHT_PATHS_FILE_JSON
 
