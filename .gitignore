@@ -1,7 +1,8 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
-
+# Tenjin cache files
+*.pyhtml.cache
 # sensitive stuff
 local_settings.py
 

@@ -41,7 +41,7 @@ if __name__ == '__main__':
     cherrypy.config.update({
         'server.socket_port': 8092,
         'tools.proxy.on': True,
-        'tools.proxy.base': 'http://fogtest.com',
+        'tools.proxy.base': 'http://fogtest.com/coconuts',
         'tools.encode.encoding': "utf-8",
     })
-    cherrypy.quickstart(Root())
+    cherrypy.quickstart(Root(), '/coconuts')
