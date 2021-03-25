@@ -2,7 +2,7 @@ Cheetah==2.4.4
 CherryPy==3.6.0
 Landscape-Client==14.01
 PAM==0.4.2
-PyYAML==3.10
+PyYAML==5.4
 Tenjin==1.1.1
 Twisted-Core==13.2.0
 Twisted-Names==13.2.0
